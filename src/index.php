@@ -8,8 +8,8 @@
     </head>
     <body>
         <?php
-            include 'shared/database/connection.php';
-            select("FROM 'edit_status'");
+            include './shared/database/connection.php';
+            echo select_db("from `edit_status`");
         ?>
     </body>
 </html>

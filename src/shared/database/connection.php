@@ -8,10 +8,12 @@
     $db=mysql_select_db(DB_NAME, $con) or die ("Failed to connect to MySQL: " . mysql_error());
     mysql_query("SET NAME utf8;");
 
-    function select($_command) {
+    function select_db($_command) {
         $command = 'select * '.$_command;
-        echo $command;
         $rows = mysql_query($command);
-        echo '<br>'.$rows.'</br>';
+
+        return $rows;
     }
+
+    
 ?>

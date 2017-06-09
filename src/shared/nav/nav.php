@@ -28,7 +28,7 @@
                             </ul>
                         </li>
                         <li><a href="#"><span class="glyphicon glyphicon-link"></span> Link หน่วยงานที่เกี่ยวข้อง</a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-earphone"></span> ติดต่อเรา</a></li>
+                        <li><a href="http://localhost/HostingDetail/src/app/contact/contact.php"><span class="glyphicon glyphicon-earphone"></span> ติดต่อเรา</a></li>
                     </ul>
                 </div>
             </div>

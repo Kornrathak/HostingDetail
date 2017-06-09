@@ -12,7 +12,7 @@
         <div class="container">
             <?php 
                 include '../../shared/nav/nav.php';
-                include './board.php';
+                include './panel.php';
                 include '../../shared/footer/footer.php';
             ?>
         </div>

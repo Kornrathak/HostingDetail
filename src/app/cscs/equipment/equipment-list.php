@@ -1,3 +1,4 @@
+<div class="container">
 <div class="header">
     <h4>ตารางแสดงอุปกรณ์ </h4>
 </div>
@@ -71,4 +72,5 @@
 	        </div>
         </div>
     </div>
+</div>
 </div>

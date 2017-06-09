@@ -26,7 +26,7 @@
                         <li class=" dropdown"><a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ระบบฐานข้อมูลของแผนก <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">ข้อมูลอุปกรณ์ Relay</a></li>
-                                <li><a href="#">ข้อมูลอุปกรณ์ CSCS</a></li>
+                                <li><a href="./app/cscs/cscs.php" click>ข้อมูลอุปกรณ์ CSCS</a></li>
                             </ul>
                         </li>
                         <li class=" dropdown"><a href="#" class="dropdown-toggle active" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ข้อมูลสำคัญ <span class="caret"></span></a>

@@ -10,8 +10,9 @@
     </head>
     <body>
         <div class="container">
-            <?php include 'shared/nav/nav.php'; ?>
-            
+            <?php 
+                include 'shared/nav/nav.php';
+            ?>
         </div>
     </body>
 </html>

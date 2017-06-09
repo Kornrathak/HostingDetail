@@ -8,6 +8,11 @@ div.header {
     text-align: left;
 }
 
+div.position {
+    text-align: center;
+    white-space: normal;
+}
+
 header, footer {
     padding: 1em;
     color: white;

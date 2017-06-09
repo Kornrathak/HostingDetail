@@ -1,5 +1,6 @@
 body{
     background: #8999A8;
+    overflow: auto;
 }
 .navbar, .dropdown-menu{
 background:rgba(255,255,255,0.25);
@@ -18,7 +19,7 @@ border: none;
  color: #fff;
 }
 .dropdown-menu{
-      -webkit-box-shadow: none;
+    -webkit-box-shadow: none;
     box-shadow:none;
 }
 

@@ -1,23 +1,21 @@
 <html>
     <head>
-        <title>Web</title>
-        
+        <title>RELAY SECTION</title>
+        <link rel="shortcut icon" href="img/logos.ico">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="bar.css" />
-        <link rel="stylesheet" type="text/css" href="insert.css" />
+        <link rel="stylesheet" type="text/css" href="shared/css/bar.css" />
+        <link rel="stylesheet" type="text/css" href="shared/css/insert.css" />
+        <link rel="stylesheet" type="text/css" href="shared/css/layout.css" />
     </head>
     <body>
-        <div class="col-md-12 col-sm-12 ">
-        <?php include 'bar.php'; ?>
-        <br><br><br>
-        <br>
-        <br>
-        <div class="col-md-12 col-sm-12 ">
-        <h2 align="center">ตารางแสดงอุปกรณ์ </h2></div>
-
-    <div class="col-md-12 col-sm-12 ">
+        <div class="container">
+            <?php include 'shared/nav/nav.php'; ?>
+            <div class="header">
+                <h2>ตารางแสดงอุปกรณ์ </h2>
+            </div>
+                <div class="col-md-12 col-sm-12 ">
       <table class="table table-bordered "><!--table-striped-->
         <tr class="info" >
           <th scope="col"><center>Equipment</center></th>
@@ -48,7 +46,7 @@
         </tr>
     </table>
         </div>
-    </div>
+    
     <div class="col-md-12 col-sm-12 ">
 <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">กรอกข้อมูล</button></div>
 
@@ -105,8 +103,6 @@
 </div>
 
 </div>
-        
-
-
+        </div>
     </body>
 </html>

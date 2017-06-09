@@ -15,7 +15,7 @@
                 $result=selectDb("from substation where id='".$select."'");
                 $sql=selectDb("from equipment_info where active='1' and sub_id='".mysql_fetch_array($result)[1]."'");
                 while($row=mysql_fetch_array($sql)) {
-                    echo "<tr><td>".$row[0]."</td> <td>".$row[1]."</td> <td>".$row[2]."</td> <td>".$row[3]."</td> <td>".$row."</td></tr>";
+                    echo "<tr><td>".$row[1]."</td> <td>".$row[1]."</td> <td>".$row[2]."</td> <td>".$row[3]."</td> <td>".$row."</td></tr>";
                 }
             ?>
         </tr>

@@ -14,7 +14,11 @@
         return $rows;
     }
 
-    //function deleteDb()
+    // Pattern เตรียม data
+    // $data = array(
+    //     'sub_id' => $sub_id,
+    //     'sub_name' => $sub_name
+    // );
 
     function insertDb(array $data, $table_name) {
         $command = 'insert into '.$table_name.' (';

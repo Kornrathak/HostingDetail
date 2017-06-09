@@ -22,6 +22,15 @@ header, footer {
     top: 30px;
 }
 
+summary {
+    color: white;
+    background-color: black;
+    text-align: center;
+    position: absolute;
+    top: 95%;
+    left: 44%;
+}
+
 body{
     background: #8999A8;
     overflow: auto;

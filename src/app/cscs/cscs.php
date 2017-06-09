@@ -33,6 +33,7 @@
                         </div>
                     </form>';
                 $select = $_POST['selectSubstation'];
+                include './equipment/provinceinfo.php';
                 include './equipment/equipment-list.php';
             ?>
         </div>

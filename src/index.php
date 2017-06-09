@@ -11,7 +11,8 @@
     <body>
         <div class="container">
             <?php 
-                include 'shared/nav/nav.php';
+                include './shared/nav/nav.php';
+                include './shared/footer/footer.php';
             ?>
         </div>
     </body>

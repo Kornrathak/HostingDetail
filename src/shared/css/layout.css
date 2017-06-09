@@ -23,12 +23,15 @@ header, footer {
 }
 
 summary {
+    padding: 1px;
     color: white;
     background-color: black;
     text-align: center;
+    clear: left;
+    width: 100%;
     position: absolute;
-    top: 95%;
-    left: 44%;
+    top: 96.7%;
+    left: 0%; 
 }
 
 body{

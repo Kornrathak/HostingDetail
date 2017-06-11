@@ -30,7 +30,7 @@
                     </p>
                   </div>
                   <div class="col-md-6">
-                    <img src="../../img/bg/splash1.png" class="img-responsive">
+                    <img src="http://localhost/HostingDetail/src/img/bg/splash1.png" class="img-responsive">
                   </div>
                 </div>
               </div>

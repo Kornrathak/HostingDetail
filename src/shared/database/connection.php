@@ -1,6 +1,6 @@
 <?php
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'cscs2');
+    define('DB_NAME', 'hosting');
     define('DB_USER', 'root');
     define('DB_PASSWORD', '12345678');
 
@@ -35,7 +35,9 @@
             $count--;
         }
         $command .= ') values ('.$values.')';
+
         echo '<br>'.$command;
+
         $result = mysql_query($command);
         if ($result)
             return $result;
@@ -56,6 +58,8 @@
         }
         if ($condition)
             $command = $command.' where '.$condition;
+
+        echo '<br>'.$command;
 
         $result = mysql_query($command);
         if ($result)

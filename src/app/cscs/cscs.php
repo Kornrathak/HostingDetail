@@ -24,7 +24,10 @@
                             <div class='col-sm-4'>
                                 <select class='form-control' id='selectSubstaion' name='selectSubstation'><option value='-1'> --- เลือกสถานี --- </option>";
                 while ($row=mysql_fetch_array($rows)) {
-                    echo '<option value="'.$row[0].'">'.$row[2].'</option>';
+                    $text = '<option value="'.$row[0].'"';
+                    if($select != -1 && $select == $row[0]) $text .= ' selected ';
+                    $text .= '>'.$row[2].'</option>';
+                    echo $text;
                 }
                 echo '          </select>
                             </div>
@@ -34,6 +37,7 @@
                         </div>
                     </form>';
                 $select = $_POST['selectSubstation'];
+                
                 include './equipment/provinceinfo.php';
                 include './equipment/equipment-list.php';
 

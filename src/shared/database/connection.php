@@ -1,6 +1,6 @@
 <?php
     define('DB_HOST', 'localhost');
-    define('DB_NAME', 'hosting');
+    define('DB_NAME', 'cscs2');
     define('DB_USER', 'root');
     define('DB_PASSWORD', '12345678');
 

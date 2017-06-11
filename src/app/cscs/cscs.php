@@ -10,6 +10,7 @@
     </head>
     <body id="myPage">
         <div class="container">
+        
             <?php 
                 include '../../shared/nav/nav.php'; 
                 include '../../shared/database/connection.php'; 
@@ -23,7 +24,7 @@
                             <div class='col-sm-4'>
                                 <select class='form-control' id='selectSubstaion' name='selectSubstation'><option value='-1'> --- เลือกสถานี --- </option>";
                 while ($row=mysql_fetch_array($rows)) {
-                    echo '<option value="'.$row[0].'">'.$row[1].'</option>';
+                    echo '<option value="'.$row[0].'">'.$row[2].'</option>';
                 }
                 echo '          </select>
                             </div>

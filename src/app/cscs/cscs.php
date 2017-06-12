@@ -10,12 +10,14 @@
     </head>
     <body id="myPage">
         <div class="container">
-        
-            <?php 
+            <?php
                 include '../../shared/nav/nav.php'; 
                 include '../../shared/database/connection.php'; 
                 echo '<div class="header"><h2>ข้อมูล CSCS</h2></div>';
                 $rows=selectDb('from substation');
+                $select=$_POST['sub'];
+                $chk = 0;
+                if (!is_null($select)) $chk = 1;
                 echo "<form method='post' action=''>
                         <div class='form-group col-sm-12'>
                             <div class='col-sm-1 position'>
@@ -36,8 +38,9 @@
                             </div>
                         </div>
                     </form>';
-                $select = $_POST['selectSubstation'];
-                
+                if ($chk == 0) {
+                    $select = $_POST['selectSubstation'];
+                }
                 include './equipment/provinceinfo.php';
                 include './equipment/equipment-list.php';
 

@@ -18,8 +18,12 @@
                     echo "<tr align=center ><td><a href='http://localhost/HostingDetail/src/app/cscs/equipment.php?serial=".$row[6]."'>".$row[1]."</a></td>";
                     echo "<td>".$row[5]."</td><td>".$row[9]."</td><td>".$row[6]."</td><td>".$row[10]."</td></tr>";
                 }
+
             ?>
         </table>
+        <?php
+            echo $select;
+        ?>
     </div>
     <button class="btn btn-primary" data-toggle="modal" data-target="#basicModal"> กรอกข้อมูลเพิ่มเติม </button>
     <div class="modal fade" id="basicModal">
@@ -110,7 +114,7 @@
     </div>
 </div>
 <?php
-    if(isset($_POST['submit'])) {    
+    if(isset($_POST['submit']) && $chkInsert == 0) {    
         $r_sub=selectDb("from substation where id='".$_POST['sub']."'");
         $id_uni=base64_encode($_POST['sn']);
         $data=array(
@@ -138,6 +142,7 @@
             );
             $r_def = insertDb($data, 'defective_info');
             $select=$_POST['sub'];
+            $chkInsert=1;
             if ($r_def != 1) echo $r_def;
         }
         else echo $r_equip;
@@ -146,6 +151,6 @@
 <script>
     var btn = document.getElementById('myBtn');
     btn.addEventListener('click', function() {
-        document.location.href = '<?php echo $page; ?>';
+        document.location.href = '<?php echo $page; $chkInsert=0; ?>';
     });
 </script>

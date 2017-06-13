@@ -40,8 +40,10 @@
                   <tbody>
                           <tr>
                             <td align="center">
+                              <form action="" method="POST">
                               <!--<a class="btn btn-default"><em class="fa fa-pencil"></em></a>-->
-                              <a class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                              <button class="btn btn-danger" type="submit" name="btn"><em class="fa fa-trash"></em></button>
+                              </form>
                             </td>
                             <!--<td class="hidden-xs">1</td>-->
                             <?php

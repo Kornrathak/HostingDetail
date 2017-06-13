@@ -10,15 +10,29 @@
 
     function selectDb($_command) {
         $command = 'select * '.$_command;
-        $rows = mysql_query($command);
-        return $rows;
+        $result = mysql_query($command);
+        
+        echo '<br>'.$command;
+
+        if ($result)
+            return $result;
+        else
+            return mysql_error();
     }
 
-    // Pattern เตรียม data
-    // $data = array(
-    //     'sub_id' => $sub_id,
-    //     'sub_name' => $sub_name
-    // );
+    function deleteDb($table_name, $condition = NULL) {
+        $command = 'delete from '.$table_name;
+        if ($condition)
+            $command = $command.' where '.$condition;
+        echo '<br>'.$command;
+
+        $result = mysql_query($command);
+
+        if ($result)
+            return $result;
+        else
+            return mysql_error();
+    }
 
     function insertDb(array $data, $table_name) {
         $command = 'insert into '.$table_name.' (';

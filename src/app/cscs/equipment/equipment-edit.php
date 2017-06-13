@@ -47,7 +47,7 @@
             echo '  <tr><th scope="col">สถานะภาพการใช้งาน</th><td>'.$d_equip['working_status'].'</td></tr>';
             echo '  <tr><th scope="col">หมายเหตุ</th><td>'.$d_equip['note'].'</td></tr>';
             echo '</tr>';
-            echo '<td><div align="center"><a href=edit_ac.php?id='.$d_equip['id'].' class="btn btn-primary"><strong>แก้ไขข้อมูล</strong></a></div></td>';
+            echo '<td><div align="center"><a href=equipment-edit_ac.php?id='.$d_equip['id'].' class="btn btn-primary"><strong>แก้ไขข้อมูล</strong></a></div></td>';
             echo '<td><div align="center"><a href=uppic3.php?id='.$id.' class="btn btn-primary"><strong>อัพโหลดรูปภาพ</strong></a></div></td>';
             echo '</table></div>';
           //$subname=$d_equip["sub_name"];
@@ -55,7 +55,7 @@
             echo '<div class="col-md-12 col-sm-12"><table class="table table-striped table-bordered">';
             echo '<tr>
                     <th scope="col" colspan="4" bgcolor="red">ข้อมูลอุปกรณ์ชำรุด</th>
-                    <th scope="col" bgcolor="red"><a href=edit_ac2.php?equiment='.$d_equip['unique_id'].' class="btn btn-primary"><strong>เพิ่มรายงาน</strong></a></th>
+                    <th scope="col" bgcolor="red"><a href=def.php?equiment='.$d_equip['unique_id'].' class="btn btn-primary"><strong>เพิ่มรายงาน</strong></a></th>
                   </tr>';
             echo '<tr><tr class="info">
                     <th scope="col"><center>วันที่แก้ไข</center></th>

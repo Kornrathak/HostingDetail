@@ -20,7 +20,7 @@
             echo '<tr><th scope="col">หมดระยะประกัน</th><td>'.$d_province['warranty_period'].'</td></tr>';
             echo '<tr><th scope="col">สถานะการใช้งาน</th><td>'.$d_province['working_status'].'</td></tr>';
             echo '<tr><th scope="col">จำนวนอุปกรณ์ชำรุด</th><td>'.$d_province['defective'].' รายการ</td></tr>';
-            echo '<tr><th scope="col" colspan="2" bgcolor="#99FFFF"><a href="http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?id='.$d_province['id'].'" class="btn btn-primary"><strong>แกไขรายละเอียดสถานี</strong></a></th></tr>';
+            echo '<tr><th scope="col" colspan="2" bgcolor="#99FFFF"><a href="http://localhost/HostingDetail/src/app/cscs/equipment/province-edit.php?id='.$d_province['id'].'" class="btn btn-primary"><strong>แกไขรายละเอียดสถานี</strong></a></th></tr>';
             $insu = $d_province['insurance_period']; //<< เอาไว้ทำอะไร????
         ?>
         </table>

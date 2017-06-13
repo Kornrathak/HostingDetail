@@ -35,7 +35,16 @@
     <div class="section">
       <div class="container">
         <div class="row">
-        
+        <?php echo "
+        <a href='http://172.22.3.8/dms-portal/'><h3>1.แผนกระบบควบคุมศูนย์สั่งการ</h3></a>
+            <div class='col-sm-12'>
+            &nbsp;&nbsp;&nbsp;>&nbsp;NETWORK PICTURE 22KV
+รูปภาพโครงสร้างแผนผังวงจรไฟฟ้้าแบ่งตามระดับแรงดัน<br><br></div>" ;?>
+        <a href="http://intra.ne3.pea.co.th/"><h3>2.Intranet peane 3</h3></a>
+        <a href="http://intranet.pea.co.th/"><h3>3.Intranet PEA</h3></a>
+        <a href="http://intranet.pea.co.th/sites/dsat/"><h3>4.กองอุปกรณ์ควบคุม (กอค.)</h3></a>
+        <a href="http://spt.pea.co.th/"><h3>5.กองอุปกรณ์ป้องกันและรีเลย์ (กอร.)</h3></a>
+        <a href="http://172.29.84.96/rtuava/"><h3>6.ตรวจสอบความพร้อมใช้งานของอุปกรณ์ควบคุมในระบบ SCADA/DMS</h3></a>
       </div>
     </div>
     <div class="section">

@@ -1,20 +1,22 @@
-<html>
-    <head>
-        <title>RELAY SECTION</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ข้อมูลอุปกรณ์RELAY</title>
         <link rel="shortcut icon" href="../../img/logo/logos.ico">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" type="text/css" href="../../shared/css/insert.css" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../../shared/css/layout.css" />
         <link rel="stylesheet" type="text/css" href="../../shared/css/button.css" />
-    </head>
-    <body id="myPage">
-        <div class="container">
-            <?php
+        <link rel="stylesheet" type="text/css" href="../../shared/css/panel.css" />
+</head>
+<body>
+<?php
                 include '../../shared/nav/nav.php'; 
                 include '../../shared/database/connection.php'; 
-                echo '<div class="header"><h2>ข้อมูลอุปกรณ์ CSCS</h2></div>';
+                echo '<div class="header"><h2>ข้อมูลอุปกรณ์ RELAY</h2></div>'; 
                 $rows=selectDb('from substation');
                 $select=$_POST['sub'];
                 $chk = 0;
@@ -42,11 +44,10 @@
                 if ($chk == 0) {
                     $select = $_POST['selectSubstation'];
                 }
-                include './equipment/provinceinfo.php';
-                include './equipment/equipment-list.php';
+                include './operation/operation-list.php';
 
                 include '../../shared/footer/footer.php';
             ?>
         </div>
-    </body>
+        </body>
 </html>

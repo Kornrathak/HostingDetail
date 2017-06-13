@@ -17,7 +17,7 @@
                         <li><a href="http://localhost/HostingDetail/src/app/job-description/job-description.php"><span class="glyphicon glyphicon-user"></span> Job Description</a></li>
                         <li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-inbox"></span> ระบบฐานข้อมูลของแผนก <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><span class="glyphicon glyphicon-ok-circle"></span> ข้อมูลอุปกรณ์ Relay</a></li>
+                                <li><a href="http://localhost/HostingDetail/src/app/relay/relay.php"><span class="glyphicon glyphicon-ok-circle"></span> ข้อมูลอุปกรณ์ Relay</a></li>
                                 <li><a href="http://localhost/HostingDetail/src/app/cscs/cscs.php"><span class="glyphicon glyphicon-ok-circle"></span> ข้อมูลอุปกรณ์ CSCS</a></li>
                             </ul>
                         </li>

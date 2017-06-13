@@ -15,7 +15,7 @@
                 $r_sub=selectDb("from substation where id='".$select."'");
                 $r_equip=selectDb("from equipment_info where active='1' and sub_id='".mysql_fetch_array($r_sub)[1]."'");
                 while($row=mysql_fetch_array($r_equip)) {
-                    echo "<tr align=center ><td><a href='http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial=".$row[6]."'>".$row[1]."</a></td>";
+                    echo "<tr align=center ><td><a href='http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial=".$row['unique_id']."'>".$row[1]."</a></td>";
                     echo "<td>".$row[5]."</td><td>".$row[9]."</td><td>".$row[6]."</td><td>".$row[10]."</td></tr>";
                 }
 

@@ -72,6 +72,9 @@
                             </div>
                         </div>';
                 echo '</form>';
+                echo '<div class="col-md-1 col-sm-1 ">
+                        <a href="http://localhost/HostingDetail/src/app/cscs/cscs.php" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> ย้อนกลับ</a>
+                      </div>';
 
                 if($_POST){
                     $data=array(
@@ -99,9 +102,7 @@
                         echo "<br>";
                     }
                 }
-                echo '<div class="col-md-1 col-sm-1 ">
-                        <a href="http://localhost/HostingDetail/src/app/cscs/cscs.php" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> ย้อนกลับ</a>
-                      </div>';
+                
                 include '../../../shared/footer/footer.php';
                 echo '<script>
                         document.getElementById("myDate").value="'.$d_province['warranty_period'].'";

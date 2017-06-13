@@ -14,10 +14,12 @@
           <?php 
             include '../../../shared/nav/nav.php';
             include '../../../shared/database/connection.php';
+            $serial=$_GET ['serial'];
+            $r_equip = selectDb("from equipment_info where unique_id='".$serial."' and active=1");
+            $d_equip=mysql_fetch_array($r_equip);
             echo '<div class="header"><h2>ข้อมูล CSCS</h2></div>';
             echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/cscs.php" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> ย้อนกลับ</a></div><br></br>';
             echo '<div class="row">';
-            $serial=$_GET ['serial'];
             echo '<div class="col-md-12 col-sm-12 " >
                     <table class="table table-striped table-bordered" >
                       <tr>
@@ -25,15 +27,13 @@
                           <th scope="col">รายละเอียดอุปกรณ์</th>
                         </tr>
                         <tr>';
-            echo '        <th scope="col">Picture</th>
+            echo '        <th scope="col"><img src="../../../shared/upload/'.$d_equip['pic'].'"></th>
                         </tr>
                       </tr>  
                     </table>
                   </div>
                   </div>';
-            $r_equip = selectDb("from equipment_info where serial_n='".$serial."' and active=1");
             echo '<div class="col-md-12 col-sm-12 "><table class="table table-striped table-bordered">';
-            $d_equip=mysql_fetch_array($r_equip);
             echo '<tr><h2 align="center">สถานีไฟฟ้า '.$d_equip['sub_id'].'</h2>';
             echo '  <tr><th scope="col">ชื่ออุปกรณ์</th><td>'.$d_equip['equipment'].'</td></tr>';
             echo '  <tr><th scope="col">รุ่น</th><td>'.$d_equip['generation'].'</td></tr>';
@@ -44,12 +44,12 @@
             echo '  <tr><th scope="col">แรงดันไฟฟ้า</th><td>'.$d_equip['voltage'].'</td></tr>';
             echo '  <tr><th scope="col">ผู้รับผิดชอบดูแล</th><td>'.$d_equip['responsible_person'].'</td></tr>';
             echo '  <tr><th scope="col">การรับประกัน</th><td>'.$d_equip['insurance'].'</td></tr>';
-            echo '  <tr><th scope="col">ระยะประกัน</th><td>'.$d_equiprow['insurance_period'].'</td></tr>';
+            echo '  <tr><th scope="col">ระยะประกัน</th><td>'.$d_equip['insurance_period'].'</td></tr>';
             echo '  <tr><th scope="col">สถานะภาพการใช้งาน</th><td>'.$d_equip['working_status'].'</td></tr>';
             echo '  <tr><th scope="col">หมายเหตุ</th><td>'.$d_equip['note'].'</td></tr>';
             echo '</tr>';
-            echo '<td><div align="center"><a href=equipment-edit_ac.php?id='.$d_equip['id'].' class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
-            echo '<td><div align="center"><a href=uppic3.php?id='.$id.' class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> <strong>อัพโหลดรูปภาพ</strong></a></div></td>';
+            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit_ac.php?id='.$d_equip['id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
+            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/shared/upload/upload-picture.php?id='.$d_equip['id'].'&table=equipment_info&target='.base64_encode('http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial='.$d_equip['unique_id']).'" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> <strong>อัพโหลดรูปภาพ</strong></a></div></td>';
             echo '</table></div>';
 
             echo '<div class="col-md-12 col-sm-12"><table class="table table-striped table-bordered">';

@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>RELAY SECTION</title>
-        <link rel="shortcut icon" href="../../img/logo/logos.ico">
+        <link rel="shortcut icon" href="http://localhost/HostingDetail/src/img/logo/logos.ico">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -35,7 +35,7 @@
                 echo '          </select>
                             </div>
                             <div class="col-sm-2">
-                                <input id="sub_btn" type="submit" class="btn btn-magick spaceWhite" value="Submit">
+                                <button id="sub_btn" type="submit" class="btn btn-magick spaceWhite"><span class="glyphicon glyphicon-ok"></span> Submit</button>
                             </div>
                         </div>
                     </form>';

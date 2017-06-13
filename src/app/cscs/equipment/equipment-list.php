@@ -21,12 +21,9 @@
 
             ?>
         </table>
-        <?php
-            echo $select;
-        ?>
     </div>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#basicModal"> กรอกข้อมูลเพิ่มเติม </button>
-    <a href="http://localhost/HostingDetail/src/app/spare_part/index.php" class="btn btn-magick ">SPARE PART</a>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> กรอกข้อมูลเพิ่มเติม </button>
+    <a href="http://localhost/HostingDetail/src/app/spare_part/index.php" class="btn btn-magick "><span class="glyphicon glyphicon-chevron-right"></span> SPARE PART</a>
     <div class="modal fade" id="basicModal">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -11,7 +11,6 @@
     function selectDb($_command) {
         $command = 'select * '.$_command;
         $result = mysql_query($command);
-
         if ($result)
             return $result;
         else
@@ -22,10 +21,7 @@
         $command = 'delete from '.$table_name;
         if ($condition)
             $command = $command.' where '.$condition;
-        echo '<br>'.$command;
-
         $result = mysql_query($command);
-
         if ($result)
             return $result;
         else
@@ -36,7 +32,6 @@
         $command = 'insert into '.$table_name.' (';
         $count = count($data);
         $values = "'";
-
         foreach ($data as $key => $value) {
             $command .= $key;
             $values = $values.$value."'";
@@ -47,9 +42,6 @@
             $count--;
         }
         $command .= ') values ('.$values.')';
-
-        echo '<br>'.$command;
-
         $result = mysql_query($command);
         if ($result)
             return $result;
@@ -60,7 +52,6 @@
     function updateDb(array $data, $table_name, $condition = NULL) {
         $command = 'update '.$table_name.' set ';
         $count = count($data);
-
         foreach ($data as $key => $value) {
             $command = $command.$key."='".$value."'";
             if ($count != 1) {
@@ -70,9 +61,6 @@
         }
         if ($condition)
             $command = $command.' where '.$condition;
-
-        echo '<br>'.$command;
-
         $result = mysql_query($command);
         if ($result)
             return $result;

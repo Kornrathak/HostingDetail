@@ -55,7 +55,7 @@
             echo '<div class="col-md-12 col-sm-12"><table class="table table-striped table-bordered">';
             echo '<tr>
                     <th scope="col" colspan="4" bgcolor="red">ข้อมูลอุปกรณ์ชำรุด</th>
-                    <th scope="col" bgcolor="red"><a href="http://localhost/HostingDetail/src/app/cscs/defective/defective-list.php?equiment='.$d_equip['unique_id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> <strong>เพิ่มรายงาน</strong></a></th>
+                    <th scope="col" bgcolor="red"><a href="http://localhost/HostingDetail/src/app/cscs/defective/defective-list.php?equipment='.$d_equip['unique_id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> <strong>เพิ่มรายงาน</strong></a></th>
                   </tr>';
             echo '<tr><tr class="info">
                     <th scope="col"><center>วันที่แก้ไข</center></th>

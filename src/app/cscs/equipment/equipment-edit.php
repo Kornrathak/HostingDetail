@@ -48,14 +48,14 @@
             echo '  <tr><th scope="col">สถานะภาพการใช้งาน</th><td>'.$d_equip['working_status'].'</td></tr>';
             echo '  <tr><th scope="col">หมายเหตุ</th><td>'.$d_equip['note'].'</td></tr>';
             echo '</tr>';
-            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit_ac.php?id='.$d_equip['id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
-            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/shared/upload/upload-picture.php?id='.$d_equip['id'].'&table=equipment_info&target='.base64_encode('http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial='.$d_equip['unique_id']).'" class="btn btn-primary"><span class="glyphicon glyphicon-cloud-upload"></span> <strong>อัพโหลดรูปภาพ</strong></a></div></td>';
+            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit_ac.php?id='.$d_equip['id'].'" class="btn btn-magick"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
+            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/shared/upload/upload-picture.php?id='.$d_equip['id'].'&table=equipment_info&target='.base64_encode('http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial='.$d_equip['unique_id']).'" class="btn btn-magick"><span class="glyphicon glyphicon-cloud-upload"></span> <strong>อัพโหลดรูปภาพ</strong></a></div></td>';
             echo '</table></div>';
 
             echo '<div class="col-md-12 col-sm-12"><table class="table table-striped table-bordered">';
             echo '<tr>
                     <th scope="col" colspan="4" bgcolor="red">ข้อมูลอุปกรณ์ชำรุด</th>
-                    <th scope="col" bgcolor="red"><a href=def.php?equiment='.$d_equip['unique_id'].' class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> <strong>เพิ่มรายงาน</strong></a></th>
+                    <th scope="col" bgcolor="red"><a href="http://localhost/HostingDetail/src/app/cscs/defective/defective-list.php?equiment='.$d_equip['unique_id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> <strong>เพิ่มรายงาน</strong></a></th>
                   </tr>';
             echo '<tr><tr class="info">
                     <th scope="col"><center>วันที่แก้ไข</center></th>
@@ -75,6 +75,7 @@
                     </tr>';
             }
             echo '</table></div>';
+            echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/cscs-all.php" class="btn btn-info">แสดงข้อมูลทั้งหมด<span class="glyphicon glyphicon-chevron-right"></span></a></div><br></br>';
             include '../../../shared/footer/footer.php';
           ?>
         </div>

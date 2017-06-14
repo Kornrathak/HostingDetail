@@ -20,7 +20,7 @@
             $table=$_GET['table'];
             $target=base64_decode($_GET['target']);
 
-            $r_item=selectDb('from equipment_info WHERE id='.$id_item.' and active=1');
+            $r_item=selectDb('from '.$table.' WHERE id='.$id_item.' and active=1');
             $d_item=mysql_fetch_array($r_item);
             if(isset($_FILES['image'])) {
                 $errors= array();
@@ -91,7 +91,7 @@
                 if($result) {
                     echo '<div class="col-md-6 col-sm-6">';
                     echo "<br>รูปใหม่<br>";
-                    $ax=selectDb('from equipment_info where id='.$id_item.' and active=1');
+                    $ax=selectDb('from '.$table.' where id='.$id_item.' and active=1');
                     while($cv=mysql_fetch_array($ax)) {
                         $picx=$cv['pic'];
                         echo "<img src=".$picx.">";

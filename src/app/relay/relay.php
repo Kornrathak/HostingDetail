@@ -18,10 +18,10 @@
                 include '../../shared/database/connection.php'; 
                 echo '<div class="header"><h2>ข้อมูลอุปกรณ์ RELAY</h2></div>'; 
                 $rows=selectDb('from substation');
-                $select=$_POST['sub'];
+                $select=$_GET['sub'];
                 $chk = 0;
                 if (!is_null($select)) $chk = 1;
-                echo "<form method='post' action=''>
+                echo "<form method='post' action='relay.php?sub=".$_POST['selectSubstation']."'>
                         <div class='form-group col-sm-12'>
                             <div class='col-sm-1 position'>
                                 <label for='selectSubstation'>เลือกสถานี:</label>
@@ -41,13 +41,12 @@
                             </div>
                         </div>
                     </form>';
-                if ($chk == 0) {
+                if ($chk == 0 || isset($_POST['selectSubstation'])) {
                     $select = $_POST['selectSubstation'];
                 }
                 include './operation/operation-list.php';
-
                 include '../../shared/footer/footer.php';
             ?>
         </div>
-        </body>
+    </body>
 </html>

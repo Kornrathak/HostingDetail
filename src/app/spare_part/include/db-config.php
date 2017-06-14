@@ -3,7 +3,7 @@
 $DB_host="localhost";
 $DB_user="root";
 $db_pass="12345678";
-$DB_name="equipment_cscs";
+$DB_name="cscs2";
 
 try
 {

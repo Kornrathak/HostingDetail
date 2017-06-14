@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../../shared/css/insert.css" />
         <link rel="stylesheet" type="text/css" href="../../shared/css/layout.css" />
         <link rel="stylesheet" type="text/css" href="../../shared/css/button.css" />
@@ -39,7 +40,7 @@
                             </div>
                         </div>
                     </form>';
-                if ($chk == 0) {
+                if ($chk == 0 || isset($_POST['selectSubstation'])) {
                     $select = $_POST['selectSubstation'];
                 }
                 include './equipment/provinceinfo.php';

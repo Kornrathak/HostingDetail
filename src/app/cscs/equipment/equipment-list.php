@@ -5,6 +5,7 @@
     <div class="col-md-12 col-sm-12 ">
         <table class="table table-bordered "><!--table-striped-->
             <tr class="info" >
+                <th scope="col"><center><span class="glyphicon glyphicon-asterisk"></span></center></th>
                 <th scope="col"><center>Equipment</center></th>
                 <th scope="col"><center>Name</center></th>
                 <th scope="col"><center>Panel</center></th>
@@ -13,14 +14,23 @@
             </tr>
             <?php
                 $r_sub=selectDb("from substation where id='".$select."'");
-                $r_equip=selectDb("from equipment_info where active='1' and sub_id='".mysql_fetch_array($r_sub)[1]."'");
+                $d_sub=mysql_fetch_array($r_sub);
+                $r_equip=selectDb("from equipment_info where active='1' and sub_id='".$d_sub[1]."'");
                 while($row=mysql_fetch_array($r_equip)) {
-                    echo "<tr align=center ><td><a href='http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial=".$row['unique_id']."'>".$row[1]."</a></td>";
+                    echo "<tr align=center>
+                            <td><form action='http://localhost/HostingDetail/src/app/cscs/cscs.php?sub=".$d_sub['id']."' method='POST'><button class='btn btn-danger' type='submit' name='btn' value='".$row['unique_id']."'><em class='fa fa-trash'></em></button></form></td>
+                            <td><a href='http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial=".$row['unique_id']."'>".$row[1]."</a></td>";
                     echo "<td>".$row[5]."</td><td>".$row[9]."</td><td>".$row[6]."</td><td>".$row[10]."</td></tr>";
                 }
 
             ?>
         </table>
+        <?php
+            if (isset($_POST['btn'])) {
+                $result=deleteDb('defective_info', 'unique_id="'.$_POST['btn'].'"');
+                $result=deleteDb('equipment_info', 'unique_id="'.$_POST['btn'].'" and active="1"');
+            }
+        ?>
     </div>
     <button class="btn btn-primary" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> กรอกข้อมูลเพิ่มเติม </button>
     <a href="http://localhost/HostingDetail/src/app/spare_part/index.php" class="btn btn-magick "><span class="glyphicon glyphicon-chevron-right"></span> SPARE PART</a>

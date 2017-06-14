@@ -11,8 +11,6 @@
     function selectDb($_command) {
         $command = 'select * '.$_command;
         $result = mysql_query($command);
-        
-        echo '<br>'.$command;
 
         if ($result)
             return $result;

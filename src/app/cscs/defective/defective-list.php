@@ -1,119 +1,100 @@
-<div class="container">
-    <div class="header">
-        <h4>ตารางแสดงอุปกรณ์ </h4>
-    </div>
-    <div class="col-md-12 col-sm-12 ">
-        <table class="table table-bordered "><!--table-striped-->
-            <tr class="info" >
-                <th scope="col"><center>Equipment</center></th>
-                <th scope="col"><center>Name</center></th>
-                <th scope="col"><center>Panel</center></th>
-                <th scope="col"><center>Serial</center></th>
-                <th scope="col"><center>Voltage</center></th>
-            </tr>
+<html>
+    <head>
+        <title>RELAY SECTION</title>
+        <link rel="shortcut icon" href="http://localhost/HostingDetail/src/img/logo/logos.ico">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../shared/css/insert.css" />
+        <link rel="stylesheet" type="text/css" href="../../../shared/css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="../../../shared/css/button.css" />
+    </head>
+    <body id="myPage">
+        <div class="container">
             <?php
-                $r_sub=selectDb("from substation where id='".$select."'");
-                $r_equip=selectDb("from equipment_info where active='1' and sub_id='".mysql_fetch_array($r_sub)[1]."'");
-                while($row=mysql_fetch_array($r_equip)) {
-                    echo "<tr align=center ><td><a href='http://localhost/HostingDetail/src/app/cscs/equipment/equipment-edit.php?serial=".$row['unique_id']."'>".$row[1]."</a></td>";
-                    echo "<td>".$row[5]."</td><td>".$row[9]."</td><td>".$row[6]."</td><td>".$row[10]."</td></tr>";
-                }
+                include '../../../shared/nav/nav.php'; 
+                include '../../../shared/database/connection.php'; 
+                echo    "<div class='header'>
+                            <h4>เพิ่มรายงานอุปกรณ์ชำรุด </h4>
+                        </div>";
+                $equipment=$_GET ['equipment'];
+                $r_equip = selectDb("from equipment_info where unique_id='".$equipment."' and active=1");
+                $d_equip=mysql_fetch_array($r_equip);
 
+            echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/cscs.php" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span> ย้อนกลับ</a></div><br></br>';
+             echo '<form name="frm" method="post">';
+                echo '  <div class="row">';
+                echo '      <div class="container">';
+                
+                echo '          <div class="col-sm-12"><h4>แจ้งชำรุดสำหรับอุปกรณ์ '.$d_equip['equipment'].'&nbsp/&nbsp'.$d_equip['serial_n'].'</h4></div>';
+                echo '          <div class="panel panel-default">
+                                    <div class="panel-body form-horizontal payment-form">';
+                echo '                  <div class="form-group"><label for="eq" class="col-sm-3 control-label">วันที่แจ้งปัญหา:</label>
+                                            <div class="col-sm-9"><input type="date" class="form-control" name="di" ></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="ge" class="col-sm-3 control-label">วันที่ได้รับแจ้ปัญหา:</label>
+                                            <div class="col-sm-9"><input type="date" class="form-control" name="dr" ></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="sn" class="col-sm-3 control-label">เลขที่บันทึก:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="rn" placeholder="กรุณากรอกเลขที่บันทึก."></div>
+                                        </div>';
+
+                echo '                  <div class="form-group"><label for="ty" class="col-sm-3 control-label">ประเภทของปัญหา:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="ty" placeholder="กรุณากรอกประเภทของปัญหา."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="in" class="col-sm-3 control-label">รหัสอุปกรณ์ชำรุด:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="in" placeholder="กรุณากรอกรหัสอุปกรณ์ชำรุด."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="vo" class="col-sm-3 control-label">สาเหตุของปัญหา:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="vo" placeholder="กรุณากรอกสาเหตุของปัญหา."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="res" class="col-sm-3 control-label">อาการที่ชำรุด:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="res" placeholder="กรุณากรอกอาการที่ชำรุด."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="ins" class="col-sm-3 control-label">ผลกระทบที่เกิดขึ้น:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="ins" placeholder="กรุณากรอกผลกระทบที่เกิดขึ้น."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="insp" class="col-sm-3 control-label">วันที่แก้ไข:</label>
+                                            <div class="col-sm-9"><input type="date" class="form-control" name="insp" ></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="wok" class="col-sm-3 control-label">ครั้งที่แก้ไข:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="wok" placeholder="กรุณากรอกจำนวนครั้งที่แก้ไข."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="note" class="col-sm-3 control-label">การดำเนินการ:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="note" placeholder="กรุณากรอกการดำเนินการ."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="note" class="col-sm-3 control-label">รายระเอียดในการดำเนินการ:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="note" placeholder="กรุณากรอกรายระเอียดในการดำเนินการ."></div>
+                                        </div>';
+                echo '                  <div class="form-group"><label for="note" class="col-sm-3 control-label">อุปกรณ์ที่ใช้:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="note" placeholder="กรุณากรอกรายละเอียดอุปกรณ์ที่ใช้."></div>
+                                        </div>';
+
+                echo '                  <div class="form-group"><label for="note" class="col-sm-3 control-label">สถานะการแก้ไข:</label>
+                                            <div class="col-sm-9"><select class="form-control" name="status" id="status">
+                                                        <option value="-1"> --- เลือกสถานะการแก้ไข--- </option>
+                                                        <option value="ดำเนินการแก้ไขแล้วเสร็จ">ดำเนินการแก้ไขแล้วเสร็จ</option>
+                                                        <option value="ยังไม่ได้แก้ไข">ยังไม่ได้แก้ไข</option>
+                                            </select></div>
+                                        </div>';
+
+                 echo '                  <div class="form-group"><label for="note" class="col-sm-3 control-label">อุปกรณ์ที่ใช้:</label>
+                                            <div class="col-sm-9"><input type="text" class="form-control" name="note" placeholder="กรุณากรอกรายละเอียดอุปกรณ์ที่ใช้."></div>
+                                        </div>';
+                echo '                  <div class="form-group">
+                                            <div class="col-sm-12 text-right"><button type="reset" name="reset" class="btn btn-danger"> Reset </button></div>
+                                            <div class="col-sm-12"></div>
+                                            <div class="col-sm-12 text-right"><button class="btn btn-primary" type="submit" name="submit"><span class="glyphicon glyphicon-save"></span> SAVE</button></div>
+                                        </div>';
+                echo '              </div>
+                                </div>
+                            </div>
+                        </div>
+                      </form>';
             ?>
-        </table>
-    </div>
-    <button class="btn btn-primary" data-toggle="modal" data-target="#basicModal"><span class="glyphicon glyphicon-plus"></span> กรอกข้อมูลเพิ่มเติม </button>
-    <a href="http://localhost/HostingDetail/src/app/spare_part/index.php" class="btn btn-magick "><span class="glyphicon glyphicon-chevron-right"></span> SPARE PART</a>
-    <div class="modal fade" id="basicModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        <span aria-hidden="true">&times;</span>
-                        <span class="sr-only">Close</span>
-                    </button>
-                    <h2>กรอกข้อมูลอุปกรณ์ CSCS</h2>
-                </div>
-                <div class="modal-body">
-                    <form role="form" action="" method="post">
-                        <div class="form-group">
-                            <label for="name">ชื่ออุปกรณ์</label>
-                            <input type="text" class="form-control" name="name" id="name" placeholder="กรุณากรอกชื่ออุปกรณ์. (ห้ามเว้ณวรรค)">
-                        </div>
-                        <div class="form-group">
-                            <label for="substation">Station</label>
-                            <select class='form-control' name="sub" id="sub"><option value='-1'> --- เลือกสถานี --- </option>
-                                <?php
-                                    $r_sub=selectDb("from substation");
-                                    while($row=mysql_fetch_row($r_sub)) {
-                                        $text = "<option value='".$row[0]."'";
-                                        if($select != -1 && $select == $row[0]) $text .= "selected";
-                                        $text .= ">".$row[1]."</option>";//$r จำนวนตัวเลข คือลำดับข้อมูล
-                                        echo $text;
-                                    }
-                                ?>
-                            </select>
-                        </div>
-                        <!--<div class="form-group">
-                            <label for="gene">unique_id</label>
-                            <input type="text" class="form-control" name="uni" id="uni" placeholder="กรุณากรอกunique_id">
-                        </div>-->
-                        <div class="form-group"><label for="gene">รุ่น</label>
-                            <input type="text" class="form-control" name="gene" id="gene" placeholder="กรุณากรอกชื่อรุ่น. (ห้ามเว้ณวรรค)">
-                        </div>
-                        <div class="form-group"><label for="sn">serial</label>
-                            <input type="text" class="form-control" name="sn" id="sn" placeholder="กรุณากรอกserial. (ห้ามเว้ณวรรค)">
-                        </div>
-                        <div class="form-group"><label for="code">รหัสทรัพย์สิน</label>
-                            <input type="text" class="form-control" name="code" id="code" placeholder="กรุณากรอกรหัสทรัพย์สิน. (ห้ามเว้ณวรรค)">
-                        </div>
-                        <div class="form-group"><label for="type">ประเภท</label>
-                            <input type="text" class="form-control" name="type" id="type" placeholder="กรุณากรอกประเภท. (ห้ามเว้ณวรรค)">
-                        </div>
-                        <div class="form-group"><label for="install">ที่ติดตั้ง</label>
-                            <input type="text" class="form-control" name="install" id="install" placeholder="กรุณากรอกที่ติดตั้ง.">
-                        </div>
-                        <div class="form-group"><label for="vol">แรงดันไฟฟ้า</label>
-                            <input type="text" class="form-control" name="vol" id="vol" placeholder="กรุณากรอกแรงดันไฟฟ้า.">
-                        </div>
-                        <div class="form-group"><label for="person">ผู้รับผิดชอบดูแล</label>
-                            <input type="text" class="form-control" name="person" id="person" placeholder="กรุณากรอกผู้รับผิดชอบดูแล.">
-                        </div>
-                        <div class="form-group"><label for="insurance">การรับประกัน</label>
-                            <input type="text" class="form-control" name="insurance" id="insurance" placeholder="กรุณากรอกการรับประกัน.">
-                        </div>
-                        <div class="form-group"><label for="inst">ระยะประกัน</label>
-                            <input type="text" class="form-control" name="inst" id="inst" placeholder="กรุณากรอกระยะประกัน.">
-                        </div>
-                        <div class="form-group"><label for="status">สถานะภาพการใช้งาน</label>
-                            <select class='form-control' name="status" id="status">
-                                <option value='-1'> --- เลือกสถานะภาพการใช้งาน--- </option>
-                                <option value="ใช้งานได้">ใช้งานได้</option>
-                                <option value="ใช้งานไม่ได้">ใช้งานไม่ได้</option>
-                            </select>
-                        </div>
-                        <div class="form-group"><label for="note">หมายเหตุ</label>
-                            <input type="text" class="form-control" name="note" id="note" placeholder="หมายเหตุ.">
-                        </div>
-                        <div class="col-sm-12">
-                            <div class="col-sm-10">
-                                <button name ="submit" id="myBtn" type="submit" class="btn btn-default"> Save </button>
-                                <button type="reset" name="reset" class="btn btn-default"> Reset </button>
-                            </div>
-                            <die class="col-sm-2">
-                                <button type="button" class="btn btn-default" data-dismiss="modal"> Close </button>
-                            </div>
-                        </div>
-                        <br></br>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php
-    if(isset($_POST['submit']) && $chkInsert == 0) {    
-        $r_sub=selectDb("from substation where id='".$_POST['sub']."'");
+            <?php
+        if(isset($_POST['submit']) && $chkInsert == 0) {    
+        $r_sub=selectDb("from defective_info where id='".$_POST['sub']."'");
         $id_uni=base64_encode($_POST['sn']);
         $data=array(
             'equipment' => $_POST['name'],
@@ -138,9 +119,6 @@
         $chkInsert=1;
     }
 ?>
-<script>
-    var btn = document.getElementById('myBtn');
-    btn.addEventListener('click', function() {
-        document.location.href = '<?php echo $page; $chkInsert=0; ?>';
-    });
-</script>
+            
+        </div>
+                

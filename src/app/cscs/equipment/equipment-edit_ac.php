@@ -19,18 +19,6 @@
                 $r_equip=selectDb('from equipment_info where id="'.$id_equipment.'" and active="1"');
                 $d_equip=mysql_fetch_array($r_equip);
                 $data_old=array(
-                    'equipment' => $_POST['eq'],
-                    'generation' => $_POST['ge'],
-                    'serial_n' => $_POST['sn'],
-                    'property_code' => $_POST['proc'],
-                    'type' => $_POST['ty'],
-                    'installed' => $_POST['in'],
-                    'voltage' => $_POST['vo'],
-                    'responsible_person' => $_POST['res'],
-                    'insurance' => $_POST['ins'],
-                    'insurance_period' => $_POST['insp'],
-                    'working_status' => $_POST['wok'],
-                    'note' => $_POST['note'],
                     'active' => 0
                 );
                 echo '<div class="header"><h2>แก้ไขข้อมูลอุปกรณ์ CSCS</h2></div>';

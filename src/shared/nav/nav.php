@@ -23,8 +23,8 @@
                         </li>
                         <li class=" dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open"></span> ข้อมูลสำคัญ <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#"><span class="glyphicon glyphicon-ok-circle"></span> คู่มือผลิตภัณฑ์ Relay</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-ok-circle"></span> คู่มือผลิตภัณฑ์ CSCS</a></li>
+                                <li><a href="http://localhost/HostingDetail/src/app/important/important-relay.php"><span class="glyphicon glyphicon-ok-circle"></span> คู่มือผลิตภัณฑ์ Relay</a></li>
+                                <li><a href="http://localhost/HostingDetail/src/app/important/important-cscs.php"><span class="glyphicon glyphicon-ok-circle"></span> คู่มือผลิตภัณฑ์ CSCS</a></li>
                             </ul>
                         </li>
                         <li><a href="http://localhost/HostingDetail/src/app/external-link/external-link.php"><span class="glyphicon glyphicon-link"></span> Link หน่วยงานที่เกี่ยวข้อง</a></li>

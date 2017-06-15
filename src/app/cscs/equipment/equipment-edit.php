@@ -57,6 +57,7 @@
                     <th scope="col" colspan="4" bgcolor="red">ข้อมูลอุปกรณ์ชำรุด</th>
                     <th scope="col" bgcolor="red"><a href="http://localhost/HostingDetail/src/app/cscs/defective/defective-list.php?equipment='.$d_equip['unique_id'].'" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> <strong>เพิ่มรายงาน</strong></a></th>
                   </tr>';
+            echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/equipment/cscs-all.php" class="btn btn-info">แสดงข้อมูลอุปกรณ์CSCSทั้งหมด<span class="glyphicon glyphicon-chevron-right"></span></a></div><br></br>';
             echo '<tr><tr class="info">
                     <th scope="col"><center>วันที่แก้ไข</center></th>
                     <th scope="col"><center>สาเหตุการชำรุด</center></th>
@@ -75,7 +76,7 @@
                     </tr>';
             }
             echo '</table></div>';
-            echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/cscs-all.php" class="btn btn-info">แสดงข้อมูลทั้งหมด<span class="glyphicon glyphicon-chevron-right"></span></a></div><br></br>';
+            echo '<div class="col-md-1 col-sm-1 "><a href="http://localhost/HostingDetail/src/app/cscs/defective/defective-all.php" class="btn btn-info">แสดงข้อมูลอุปกรณ์ชำรุดทั้งหมด<span class="glyphicon glyphicon-chevron-right"></span></a></div><br></br>';
             include '../../../shared/footer/footer.php';
           ?>
         </div>

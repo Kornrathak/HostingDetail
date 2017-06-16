@@ -52,7 +52,7 @@
         echo '  <tr><th scope="col">หมายเหตุ(REMARK)</th><td>'.$d_equip['remark'].'</td></tr>';
        
             echo '</tr>';
-            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/app/realy/operation/operation-edit_ac.php?id='.$d_equip['id'].'" class="btn btn-magick"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
+            echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/app/relay/operation/operation-edit_ac.php?id='.$d_equip['id'].'" class="btn btn-magick"><span class="glyphicon glyphicon-pencil"></span> <strong>แก้ไขข้อมูล</strong></a></div></td>';
             echo '<td><div align="center"><a href="http://localhost/HostingDetail/src/shared/upload/upload-picture.php?id='.$d_equip['id'].'&table=operation_info&target='.base64_encode('http://localhost/HostingDetail/src/app/relay/operation/operation-edit.php?operation='.$d_equip['unique_id']).'" class="btn btn-magick"><span class="glyphicon glyphicon-cloud-upload"></span> <strong>อัพโหลดรูปภาพ</strong></a></div></td>';
             echo '</table></div>';
 
